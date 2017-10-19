@@ -1,0 +1,119 @@
+{% extends "vsys:templates/_base.jinja2" %}
+
+{% block head %}
+	<script>
+		$(document).on('click', 'a[href^="#"]', function(e) {
+		    var id = $(this).attr('href');
+		    var $id = $(id);
+		    if ($id.length === 0) {
+		        return;
+		    }
+		    e.preventDefault();
+		    var pos = $id.offset().top;
+		    $('body, html').animate({scrollTop: pos});
+		});
+	</script>
+
+	<link rel="stylesheet" href="{{ request.static_url('vsys:static/css/home.css') }}">	
+{% endblock %}
+
+{% block title %}
+	Home
+{% endblock %}
+
+{% block content %}
+	<div class="container-fluid">
+		<div class="row buttondad">
+			<a href="{{request.route_url('rentacar')}}">
+				<div class="col-md-6 leftdiv">
+					<div class="img-overlay">
+		                <img src="{{ request.static_url('vsys:static/images/home2.jpeg') }}" class="image"/>
+		                <div class="project-overlay-left infos">
+		                	<p class="info-title">Rent a Vehicle</p>
+
+							<p class="info-subtitle">Escape from car rental companies!</p>
+
+							<p class="info-description">Choose the best and most suitable vehicle for you</p>
+
+							<ul class="info-reasons">
+								<li> Reason one</li>
+								<li> Reason two</li>
+								<li> Reason three</li>
+							</ul>
+		                </div>
+		            </div>
+				</div>
+			</a>
+			
+			<a href="{{ request.route_url('offercar') }}">
+				<div class="col-md-6 rightdiv">
+					<div class="img-overlay"	>
+		                <img src="{{ request.static_url('vsys:static/images/home3.jpeg') }}" class="image"/>
+		                <div class="project-overlay-right infos">
+							<p class="info-title">Offer your Vehicle</p>
+
+							<p class="info-subtitle">Get your vehicle in motion. Get something in return!</p>
+
+							<p class="info-description">Earn extra cash by offering your vehicle to others</p>
+
+							<ul class="info-reasons">
+								<li> Reason one</li>
+								<li> Reason two</li>
+								<li> Reason three</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+
+
+
+	<div class="howitworks" id="howitworks">
+		<h2>How it works</h2>
+		
+		<div class="container-fluid text-center">
+			<div class="row">
+				<div class="col-md-3 htw">
+					<p class="icon"><i class="fa fa-key" aria-hidden="true"></i></p>
+					<p class="icon-msg">Offer your vehicle to other users</p>
+				</div>
+				
+				<div class="col-md-3 htw">
+					<p class="icon"><i class="fa fa-search" aria-hidden="true"></i></p>
+					<p class="icon-msg">Search for offered vehicles</p>
+				</div>
+				
+				<div class="col-md-3 htw">
+					<p class="icon"><i class="fa fa-car" aria-hidden="true"></i></p>
+					<p class="icon-msg">Rent the best vehicle for you</p>
+				</div>
+				
+				<div class="col-md-3 htw">
+					<p class="icon"><i class="fa fa-money" aria-hidden="true"></i></p>
+					<p class="icon-msg">Make money renting vehicles</p>
+				</div>
+			</div>
+		</div>
+		
+		<br>
+		
+		<p class="long-text">w-ces.V is a collaborative vehicles renting system. Using principles of 
+		shared economy, we offer an online platform to serve as an interface for 
+		people around the world who want to rent their own vehicles and/or look up to
+		 rent any sort of vehicles with a more fair cost.</p>
+
+		<p class="long-text">Trying to figure out how to give some use to that bike you don't ride anymore? 
+		Stay-at-home weekend and want to get some extra cash from your unused car? On w-ces.V
+		 you can easily offer your vehicle for renting purposes for the price you wish, 
+		 facing no great charges and guaranteed security. All you have to do is sign up. </p>
+
+		<p class="long-text">Looking for a car to use for a couple of days? On w-ces.V you can search in our offers 
+		to find all sorts of vehicles (cars, motorcycles, bikes and more) near a specific location, 
+		to facilitate your renting experience. Also, you can negotiate the price directly with the 
+		vehicle's owner and use our system to pay for it with security guaranteed. All you have to do is sign up.</p>
+
+		<p class="long-text">No bureaucracy. No expensive fares. Renting vehicles from users to users.</p>
+	</div>
+{% endblock %}

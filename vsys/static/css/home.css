@@ -1,0 +1,164 @@
+body {
+	background-color: #f2f1e8;
+}
+
+.long-text {
+	font-family: 'Roboto Slab', serif;
+}
+
+.buttondad div {
+	color: #fff;
+	transition: all 0.16s ease-in-out;
+}
+
+.buttondad div:hover {
+	color: #fafafa;
+}
+
+.buttondad a,
+.buttondad a:visited{
+	flex: 1;
+	text-decoration: none;
+}
+
+.img-overlay {
+    position: relative;
+}
+
+.project-overlay-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(22, 106, 160, 0.33);
+    color: #fff;
+}
+
+.project-overlay-left:hover {
+	background-color: rgba(22, 106, 160, 0.67);
+}
+
+.project-overlay-right {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(55, 153, 104, 0.33);
+    color: #fff;
+}
+
+.project-overlay-right:hover {
+	background-color: rgba(55, 153, 104, 0.67);
+}
+
+.leftdiv{
+	padding: 0;
+	text-align: right;
+	height: 400px;
+	/*background-color: #193649;*/
+	/*background-image: url("../images/home2.jpeg");*/
+	background-size: 100%;
+	overflow: hidden;
+
+}
+
+.leftdiv p,
+.leftdiv ul {
+	padding-right: 2em;
+}
+
+.leftdiv:hover {
+	background-color: #166aa0; /* base, mudar para pastel depois */ 
+}
+
+.rightdiv{
+	padding: 0;
+	text-align: left;
+	height: 400px;
+	/*background-color: #1d4f35;*/
+	/*background-image: url("../images/home3.jpeg");*/
+	background-size: 100%;
+	overflow: hidden;
+}
+/* DDDBCB
+/* 1999AA*/
+.rightdiv p,
+.rightdiv ul {
+	padding-left: 2em;
+}
+
+.rightdiv:hover {
+
+	background-color: #379968; /* base, mudar para pastel depois */
+}
+
+.center{
+	margin-left: auto;
+    margin-right: auto;
+    display: block
+}
+
+h2{
+	color: rgba(0,0,0,0.54);
+	text-align: center;
+	margin: 1em;
+	font-size: 40px;
+}
+
+
+.infos {
+	padding-top: 2em;
+}
+
+.info-title{
+	text-transform: uppercase;
+	font-size: 30px;
+}
+
+.info-subtitle{
+	font-size: 20px;
+}
+
+.info-description{
+	padding-left: 2em;
+}
+
+.info-reasons{
+	list-style-type: none;
+}
+
+.howitworks p,
+.abaoutus p{
+	padding: 0 2em;
+}
+
+.image{
+	width: 100%;
+}
+
+.icon{
+	font-size: 4em;
+}
+
+.icon-msg{
+	font-size: 1.5em;
+}
+
+.htw{
+	padding: 3em;
+	transition: ease-in-out 0.2s;
+}
+
+@media screen and (max-width: 480px) {
+	.htw{
+		padding: 1em;
+	}
+	
+}
+
+.htw:hover{
+	background-color: #232323;
+	color: #FAFAFA;
+}

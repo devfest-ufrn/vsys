@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>{% block title %}w-ces.V{% endblock %}</title>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+		<link rel="stylesheet" type="text/css" href="../static/css/home.css">
+		<!--<link rel="stylesheet" type="text/css" href="../static/css/navbar.css">-->
+		<!--<link rel="stylesheet" type="text/css" href="../static/css/footer.css">-->
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oswald|Roboto+Slab">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+		
+		<link rel="stylesheet" type="text/css" href="{{ request.static_url('vsys:static/css/navbar.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ request.static_url('vsys:static/css/footer.css') }}">
+
+		{% block head %}{% endblock %}
+
+	</head>
+
+	<body>
+		<nav class="navbar">
+			<div class="logo">
+				<h1><a href="{{ request.route_url('index') }}"> w-ces.V </a></h1>
+			</div>
+			<div class="links">
+				<ul class="menulinks">
+					<li><a href="home.php#howitworks">How it works</a></li>
+					<li><a href="rentacar.php">Rent a Vehicle</a></li>
+					<li><a href="offercar.php">Offer a Vehicle</a></li>
+				</ul>
+			</div>
+			<div class="loginbuttons">
+				<a href="signup.php"><button>Get Started</button></a>
+				<a href="login.php"><button>Login</button></a>
+			</div>
+		</nav>
+
+		{% block content %}<h1>default man!</h1>{% endblock %}
+
+		<footer>
+			<div class="footer">
+				<p>2017 - Gustavo A Carvalho; Thiago C Lucena; Yuri A Martins - Instituto Metrópole Digital - Universidade Federal do Rio Grande do Norte</p>
+			</div>
+		</footer>
+		
+	</body>
+</html>
