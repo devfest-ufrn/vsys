@@ -6,9 +6,9 @@ class MongoDatabase():
     """
     __shared_state = {}
 
-    def __init__():
+    def __init__(self):
         self.__dict__ = self.__shared_state
         self._database = MongoClient()
 
-    def instance():
+    def instance(self):
         return self._database.vsys

@@ -44,3 +44,27 @@ function checkPassword() {
     
     return cpass.value == pass.value;
 }
+
+$(document).ready(function(){
+    
+    $("#register").click(function(){
+        checkPassword();
+
+        data = {
+            'first_name': $("#first_name").val(), 
+            'last_name': $("#last_name").val(),
+            'email': $("#email").val(),
+            'password':  $("#password").val(),
+        }
+        $.ajax({
+            url: '/users',
+            method: 'POST',
+            data: data,
+            context: this
+        }).done(function(resp){
+            if(resp.success){
+                window.location.href = "/login";
+            }
+        });
+    });
+});

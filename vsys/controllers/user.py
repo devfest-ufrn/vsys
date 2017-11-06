@@ -17,6 +17,12 @@ class UserController(object):
             user_inserted = self.db.users.insert(user_to_insert)
             user.id = user_inserted
 
+            if user_inserted:
+                user_to_insert['success'] = True
+                user_to_insert['_id'] = str(user_to_insert['_id'])
+                return user_to_insert
+
+            erros['user_not_iserted'] = True
         return errors
 
     def validate(self, user):
