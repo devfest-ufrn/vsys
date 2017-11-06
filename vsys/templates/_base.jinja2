@@ -35,14 +35,14 @@
 			</div>
 			<div class="links">
 				<ul class="menulinks">
-					<li><a href="home.php#howitworks">How it works</a></li>
-					<li><a href="rentacar.php">Rent a Vehicle</a></li>
-					<li><a href="offercar.php">Offer a Vehicle</a></li>
+					<li><a href="/#howitworks">How it works</a></li>
+					<li><a href="{{ request.route_url('rentacar') }}">Rent a Vehicle</a></li>
+					<li><a href="{{ request.route_url('offercar') }}">Offer a Vehicle</a></li>
 				</ul>
 			</div>
 			<div class="loginbuttons">
-				<a href="signup.php"><button>Get Started</button></a>
-				<a href="login.php"><button>Login</button></a>
+				<a href="{{ request.route_url('signup') }}"><button>Get Started</button></a>
+				<a href="#"><button>Login</button></a>
 			</div>
 		</nav>
 
