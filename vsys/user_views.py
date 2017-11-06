@@ -6,9 +6,16 @@ from vsys.models.user import User
 def register(request):
     params = request.params
     _return = {}
-    
+
     if params:
-        print "oi"
+        first_name = params.get('first_name')
+        last_name = params.get('last_name')
+        email = params.get('email')
+        password = params.get('password')
+
+        user = User(first_name, last_name, email, password)
+
+        
     else:
         _return = {"success": False, "msg": "Missing parameters"}
 

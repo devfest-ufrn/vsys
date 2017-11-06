@@ -1,6 +1,6 @@
 class User():
     
-    def __init__(self, first_name, last_name, email, password, address):
+    def __init__(self, first_name, last_name, email, password):
         self._first_name = first_name
         self._last_name = last_name
         self._email = email
@@ -9,7 +9,7 @@ class User():
 
     @property
     def id(self):
-        return self.id
+        return self._id
 
     @id.setter
     def id(self, value):
@@ -17,7 +17,7 @@ class User():
 
     @property
     def first_name(self):
-        return self.first_name
+        return self._first_name
 
     @first_name.setter
     def first_name(self, value):
@@ -25,7 +25,7 @@ class User():
 
     @property
     def last_name(self):
-        return self.last_name
+        return self._last_name
 
     @last_name.setter
     def last_name(self, value):
@@ -33,7 +33,7 @@ class User():
 
     @property
     def email(self):
-        return self.email
+        return self._email
 
     @email.setter
     def email(self, value):
@@ -41,7 +41,7 @@ class User():
 
     @property
     def password(self):
-        return self.password
+        return self._password
 
     @password.setter
     def password(self, value):
