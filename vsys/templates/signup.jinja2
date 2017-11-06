@@ -1,0 +1,61 @@
+{% extends "vsys:templates/_base.jinja2" %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{{ request.static_url('vsys:static/css/signup.css') }}?v=2">
+
+    <script src="{{ request.static_url('vsys:static/js/signup.js') }}"></script>
+{% endblock %}
+
+{%block content %}
+<div class="signup">
+    <div class="signup">
+        <p class="signup-title"> Sign up now!</p>
+        
+        <h2 id="confirmation"></h2>
+
+        <label for="firstName">First Name:</label>
+        <input id="first_name" name="firstName" type="text" onblur="validate('first_name')" onkeyup="validate('firstName')" placeholder="Your first name" />
+        <span id="firstNameMes"></span>
+        <br>
+        
+        <label for="lastName">Last Name:</label>
+        <input id="last_name" name="lastName" type="text" onblur="validate('last_name')" onkeyup="validate('lastName')" placeholder="Your last name" />
+        <span id="lastNameMes"></span>
+        <br>
+        
+        <label for="birthday">Birthday:</label>
+        <input id="birthday" name="birthday" type="date" />
+        <br>
+        
+        <label for="email">Email:</label>
+        <input id="email" name="email" type="text" onblur="validate('email')" onkeyup="validate('email')" placeholder="Put yout email address..." required/>
+        <span id="emailMes"></span>
+        <br>
+        
+        <label for="password">Password:</label>
+        <input id="password" name="password" type="password" onblur="validate('password')" onkeyup="validate('password')" />
+        <span id="passwordMes"></span>
+        <br>
+        
+        <label for="cpassword">Confirm Password:</label>
+        <input id="cpassword" name="cpassword" type="password" onblur="checkPassword()" onkeyup="checkPassword()" />
+        <span id="cpasswordMes"></span>
+        <br>
+        
+        <label for="address">Address: </label>
+        <input id="address" name="address" type="text" placeholder="Your address" />
+        <span id="addressMes"></span>
+        <br>
+
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+            <option>Brasil</option>
+            <option>EUA</option>
+        </select>
+        
+        <input type="button" name="submit" value="Sign Up" id="register"/>
+    </div>
+</div>
+
+
+{% endblock %}

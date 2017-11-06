@@ -44,6 +44,9 @@ def main(global_config, **settings):
     config.add_route('rentacar', '/rentacar')
     config.add_route('offercar', '/offercar')
 
+    ### Users routes:
+    config.add_route('users.register', '/users')
+
     # config.scan('routes.py')
     config.scan()
     return config.make_wsgi_app()
