@@ -15,3 +15,8 @@ def offercar(request):
 @view_config(route_name='signup', renderer='templates/signup.jinja2')
 def signup(request):
     return {'success': True}
+
+
+@view_config(route_name='register_vehicle', renderer='templates/register_vehicle.jinja2')
+def signup(request):
+    return {'success': True}

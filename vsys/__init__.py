@@ -42,10 +42,13 @@ def main(global_config, **settings):
     config.add_route('signup', '/signup')
 
     config.add_route('rentacar', '/rentacar')
+    
     config.add_route('offercar', '/offercar')
 
     ### Users routes:
     config.add_route('users.register', '/users')
+
+    config.add_route('register_vehicle', '/offercar/register_vehicle')
 
     # config.scan('routes.py')
     config.scan()
