@@ -1,4 +1,7 @@
+from vsys.models.user import User
 from vsys.models.database import MongoDatabase
+
+from bson import ObjectId
 
 class UserController(object):
     
@@ -37,3 +40,19 @@ class UserController(object):
             errors['empty_password'] = True
 
         return errors
+
+    def get_users(self):
+        users = list(self.db.users.find({}))
+        for user in users:
+            user['_id'] = str(user.get('_id'))
+            user['password'] = ""
+        return users
+
+    def get_user(self, user_id):
+        user_id = ObjectId(user_id)  
+        user_db = self.db.users.find_one({"_id": user_id})
+        return User(user_db['first_name'], user_db['last_name'], user_db['email'], user_db['password'])
+
+    def edit_user(self, user_id):
+        user = self.get_user(user_id)
+        
