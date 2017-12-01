@@ -66,3 +66,10 @@ def edit_user(request):
         _return = {"success": False, "msg": "Missing parameters"}
 
     return _return
+
+@view_config(route_name="user", request_method="DELETE", renderer='json')
+def remove_user(request):
+    user_id = request.matchdict['user_id']
+    user = user_controller.get_user(user_id)
+    
+    return user_controller.delete_user(user)

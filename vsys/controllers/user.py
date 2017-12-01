@@ -54,7 +54,7 @@ class UserController(object):
         user = User(user_db['first_name'], user_db['last_name'], user_db['email'], user_db['password'])
         user.id = str(user_db.get('_id'))
         return user
-        
+
     def edit_user(self, user):
         errors = self.validate(user)
         if not errors:
@@ -65,7 +65,11 @@ class UserController(object):
                             "password": user.password
                         }
             print user._id
-            print self.db.users.update({"_id": ObjectId(user.id)}, {'$set': user_json})
+            self.db.users.update({"_id": ObjectId(user.id)}, {'$set': user_json})
             return user_json
 
         return {'errors': errors}
+
+    def delete_user(self, user):
+        self.db.users.remove({"_id": ObjectId(user.id)})
+        return {'success': True}
