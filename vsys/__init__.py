@@ -46,7 +46,7 @@ def main(global_config, **settings):
 
     ### Users routes:
     config.add_route('users', '/users')
-    config.add_route('users.one', '/users/{user_id}')
+    config.add_route('user', '/users/{user_id}')
 
 
     # config.scan('routes.py')
