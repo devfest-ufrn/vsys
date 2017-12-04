@@ -46,7 +46,9 @@ def main(global_config, **settings):
     config.add_route('offercar', '/offercar')
 
     ### Users routes:
-    config.add_route('users.register', '/users')
+    config.add_route('users', '/users')
+    config.add_route('user', '/users/{user_id}')
+
 
     config.add_route('register_vehicle', '/offercar/register_vehicle')
 

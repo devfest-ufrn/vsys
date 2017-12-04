@@ -12,6 +12,8 @@ a{
 	padding: 3em 2em;
 	/*text-transform: uppercase;*/
 	transition: all 1s ease;
+	width: 100%;
+
 }
 
 .new-offer:hover{
