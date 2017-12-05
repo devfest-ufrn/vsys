@@ -1,0 +1,30 @@
+{% extends "vsys:templates/_base.jinja2" %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{{ request.static_url('vsys:static/css/login.css') }}?v=2">
+
+    <script src="{{ request.static_url('vsys:static/js/signup.js') }}"></script>
+{% endblock %}
+
+{%block content %}
+<div class="login">
+    <div class="login">
+        <p class="login-title"> Login now!</p>
+        
+        <h2 id="confirmation"></h2>
+        
+        <label for="email">Email:</label>
+        <input id="email" name="email" type="text" placeholder="Put yout email address..." required/>
+        <br>
+        
+        <label for="password">Password:</label>
+        <input id="password" name="password" type="password" placeholder="Put yout password..." required />
+        <span id="loginMes"></span>
+        <br>
+        
+        <input type="button" name="submit" value="Login" id="login"/>
+    </div>
+</div>
+
+
+{% endblock %}
