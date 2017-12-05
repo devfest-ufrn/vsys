@@ -36,6 +36,7 @@ class VehicleController(object):
 		return errors
 
 	def validate(self, vehicle):
+		errors = {}
 		if not vehicle.model:
 			errors['empty_model'] = True
 		if not vehicle.year:

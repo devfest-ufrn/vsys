@@ -9,9 +9,8 @@ vehicle_controller = VehicleController()
 def register(request):
 	params = request.params
 	_return = {}
-
 	if params:
-		vehicle_type = params.get('vehicle_type')
+		vehicle_type = params.get('type')
 		brand = params.get('brand')
 		model = params.get('model')
 		year = params.get('year')
@@ -20,9 +19,8 @@ def register(request):
 		license_plate = params.get('license_plate')
 		seats = params.get('seats')
 		num_doors = params.get('num_doors')
-		fuel_type = params.get('fuel_type')
+		fuel_type = params.get('fuel')
 		value = params.get('value')
-
 		vehicle = Vehicle(  vehicle_type,
 							brand,
 							model,
@@ -34,7 +32,7 @@ def register(request):
 							num_doors,
 							fuel_type,
 							value)
-		_return = user_controller.register_vehicle(vehicle)
+		_return = vehicle_controller.register(vehicle)
 
 	else:
 		_return = {"success": False, "msg": "Missing parameters"}
@@ -51,7 +49,7 @@ def list_by_type(request):
 	return vehicle_controller.get_vehicles_by_type(vehicle_type)
 
 @view_config(route_name="vehicle", request_method="GET", renderer='json')
-def get_user(request):
+def get_vehicle(request):
 	vehicle_id = request.matchdict['vehicle_id']
 	vehicle = vehicle_controller.get_vehicle(vehicle_id)
 	return {

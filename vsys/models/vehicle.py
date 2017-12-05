@@ -1,6 +1,6 @@
 class Vehicle():
 
-	def __init__(vehicle_type, category, brand, model, year, color, license_plate, seats, num_doors, fuel_type, value):
+	def __init__(self, vehicle_type, category, brand, model, year, color, license_plate, seats, num_doors, fuel_type, value):
 		self._vehicle_type = vehicle_type #1 = car, 2 = motorcycle, 3 = bike 
 		self._category = category 
 		self._brand = brand
