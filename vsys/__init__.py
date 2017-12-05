@@ -40,11 +40,8 @@ def main(global_config, **settings):
     # Routes (maybe put in routes.py later)
     config.add_route('index', '/')
     config.add_route('signup', '/signup')
-<<<<<<< HEAD
-=======
     config.add_route('login', '/login')
 
->>>>>>> origin/login
     config.add_route('rentacar', '/rentacar')
     
     config.add_route('offercar', '/offercar')
