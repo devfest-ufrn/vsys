@@ -1,3 +1,88 @@
 {% extends "vsys:templates/_base.jinja2" %}
 
-{% block content %} {%endblock%}
+
+{% block content %} 
+<div class="searchfield">
+		<form action="#">
+			<input type="text" name="searchcar" placeholder="Search your favorite car model..."/>
+			<input type="submit" value="Search">
+		</form>
+	</div>
+	
+	<div class="title">
+		<h2> Find your ideal vehicle </h2>
+		<p> Check out the best options for you </p>
+	</div>
+	<h2 class="">There's no vehicle of this type in our database</h2>
+	<div class="content">
+		<a href="vehicle_list.php"><h2 class="category-title">Cars</h2></a>
+		<div class="catalogue">
+            <a href=\"vehicle.php\" class=\"offer\">
+			<div>
+				<div class=\"offer-circle\">
+		 			<img class=\"offer-image\" src=\"../static/images/" . $type . ".jpg\">
+		 		</div>
+		 		<br>
+				<div class=\"offer-title\">" . $vec->modelo . "</div>
+		 			<br>
+		 			<div class=\"offer-value\">\$" . $vec->preco . ",00</div> - <STRONG>" . $vec->duracao . "hrs</STRONG> of usage
+		 			<br>
+		 			<div class=\"offer-info\">" . $vec->dono . "</div> in " . $vec->local . "
+		 			<br>
+		 	</div>
+		</a>
+        </div>
+	
+		<a href="vehicle_list.php"><h2 class="category-title">Bycicles</h2></a>
+		<div class="catalogue">
+            <?php getVehiclesInfo("bike")?>
+        </div>
+	
+		<a href="vehicle_list.php"><h2 class="category-title">Motorcycles</h2></a>
+		<div class="catalogue">
+            <?php getVehiclesInfo("moto")?>
+        </div>
+	</div>
+
+	
+	
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('.catalogue').each(function() {
+			if ($(this).html().substring(0,3) != "<h2")
+				$(this).slick({
+					dots: true,
+					infinite: true,
+					speed: 1000,
+					slidesToShow: 4,
+					slidesToScroll: 4,
+					responsive: [
+						{
+							breakpoint: 1025,
+							settings: {
+								slidesToShow: 3,
+								slidesToScroll: 3,
+								infinite: true,
+								dots: true
+							}
+						},
+						{
+							breakpoint: 601,
+							settings: {
+								slidesToShow: 2,
+								slidesToScroll: 2
+							}
+						},
+						{
+							breakpoint: 481,
+							settings: {
+								slidesToShow: 1,
+								slidesToScroll: 1
+							}
+						}
+					]
+				});
+		})
+	});
+	</script>
+{%endblock%}
