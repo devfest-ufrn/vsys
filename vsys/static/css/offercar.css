@@ -1,0 +1,92 @@
+body {
+	font-family: 'Roboto', sans-serif;
+	background-color: #f2f1e8;
+}
+
+a{
+	text-decoration: none;
+}
+
+.new-offer{
+	background-color: rgba(37, 130, 83, 1);
+	padding: 3em 2em;
+	/*text-transform: uppercase;*/
+	transition: all 1s ease;
+}
+
+.new-offer:hover{
+	background-color: rgba(37, 130, 83, 0.9);
+}
+
+.button-title{
+	font-size: 2em;
+	color: #EEE;
+	margin-left: 20px;
+	text-align: center;
+}
+
+.button-desc{
+	color: #EEE;
+	font-size: 1.5em;
+	text-align: justify;
+}
+
+.session-title{
+	color: rgba(0,0,0,0.54);
+	margin-left: 20px;
+	font-size: 2em;
+}
+
+.offer{
+	/*background-color: white;*/
+	width: 84%;
+	padding: 2% 5%;
+	margin: 0 3%;
+	display: flex;
+	transition: all 1s ease;
+	align-items: center;
+}
+
+.offer:hover{
+	background-color: #CCC;
+}
+
+.offer h4, .offer p{
+	color: rgba(0,0,0,0.54);
+}
+
+.offer-circle{
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-right: 2%;
+}
+
+.offer-info {
+	margin-left: 2%;
+}
+
+.offer-image {
+    position: absolute; 
+    height: 100%;
+    width: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.detail{
+	font-size: 12px;
+}
+
+.sub-navbar{
+	background-color: #f2f1e8;
+	padding: 1em;
+}
+
+.sub-menulinks li{
+	display: inline-block; 
+	padding-left:2em;
+}
