@@ -50,8 +50,9 @@ def main(global_config, **settings):
     config.add_route('user', '/users/{user_id}')
 
     config.add_route('register_vehicle', '/offercar/register_vehicle')
-    config.add_route('vehicle', '/vehicles')
+    config.add_route('vehicles', '/vehicles')
     config.add_route('vehicle', '/vehicles/{vehicle_id}')
+    config.add_route('vehicle_by_type', '/vehicles/type/{vehicle_type}')
 
     # config.scan('routes.py')
     config.scan()

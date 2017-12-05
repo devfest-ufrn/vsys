@@ -1,4 +1,4 @@
-from vsys.model.vehicle import Vehicle
+from vsys.models.vehicle import Vehicle
 from vsys.models.database import MongoDatabase
 
 from bson import ObjectId

@@ -64,7 +64,6 @@ class UserController(object):
                             "email": user.email,
                             "password": user.password
                         }
-            print user._id
             self.db.users.update({"_id": ObjectId(user.id)}, {'$set': user_json})
             return user_json
 
