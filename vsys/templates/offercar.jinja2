@@ -28,46 +28,26 @@
 
 		<div id="vehicles">
 			<h3 class="session-title">Your registred vehicles</h3>
-			
-			{# <?php
-				function getVehicles($filename) {
-				    $arr = array();
-				    $file=fopen("../database/" . $filename . ".txt", r) or die("unable to open file!");
-				    while(!feof($file)) {
-				        $readLine = fgets($file);
-				        if ($readLine != "") {
-				            $readVeh = json_decode($readLine);
-				            $arr[] = $readVeh;
-				        }
-				    }
-				    
-				    return $arr;
-				}
-				
-				$vehicles = getVehicles("vehi");
-				$cont = 1;
-				foreach($vehicles as $vec) {
-					echo '<a class="offer" href="#">
-							<div class="offer-circle">
-								<img class="offer-image" src="../static/images/car.jpg">
-							</div>
-							<div class="offer-info">
-								<h4>Car #' . $cont++ . '</h4>';
-				    echo '<p class="car_model">Modelo: ' . $vec->modelo . '</p>';
-				    echo '<p class="car_price">Preço: $' . $vec->preco . '</p>';
-					echo '<p class="date"><i class="fa fa-calendar" aria-hidden="true"></i> 20/04/2017 <i class="fa fa-clock-o" aria-hidden="true"></i> 15:00</p>
-								<p class="by">Alugado por Gustavo Araújo Carvalho</p>
-								<p class="detail">Click to view in detail</p>
-							</div>
-						</a>';
-						
-				}
-			
-			?> #}
 
-			<div id="talks">
+			{% for vehicle in vehicles %}
+				<a class="offer" href="#">
+					<div class="offer-circle">
+						<img class="offer-image" src="../static/images/car.jpg">
+					</div>
+					<div class="offer-info">
+						<h4>Vehicle #{{loop.index}}</h4>
+					    <p class="car_model">Modelo: {{ vehicle.model }} </p>
+					    <p class="car_price">Preço: ${{ vehicle.value }} </p>
+						{# <p class="date"><i class="fa fa-calendar" aria-hidden="true"></i> 20/04/2017 <i class="fa fa-clock-o" aria-hidden="true"></i> 15:00</p> #}
+						<p class="by">Alugado por Fulaninho</p>
+						{# <p class="detail">Click to view in detail</p> #}
+					</div>
+				</a>
+			{% endfor %}
+
+			{# <div id="talks">
 				<h3 class="session-title">Your talks</h3>
-			</div>
+			</div> #}
 		</div>
 
 {% endblock %}
