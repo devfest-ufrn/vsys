@@ -55,6 +55,12 @@ class UserController(object):
         user.id = str(user_db.get('_id'))
         return user
 
+    def get_user_by_email(self, user_email):  
+        user_db = self.db.users.find_one({"email": user_email})
+        user = User(user_db['first_name'], user_db['last_name'], user_db['_id'], user_db['password'])
+        user.email = str(user_db.get('email'))
+        return user
+
     def edit_user(self, user):
         errors = self.validate(user)
         if not errors:
