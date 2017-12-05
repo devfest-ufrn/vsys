@@ -12,6 +12,11 @@ a{
 	padding: 3em 2em;
 	/*text-transform: uppercase;*/
 	transition: all 1s ease;
+<<<<<<< HEAD
+=======
+	width: 100%;
+
+>>>>>>> origin/crud-car
 }
 
 .new-offer:hover{
