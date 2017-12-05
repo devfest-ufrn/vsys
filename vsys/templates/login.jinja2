@@ -2,16 +2,12 @@
 
 {% block head %}
     <link rel="stylesheet" type="text/css" href="{{ request.static_url('vsys:static/css/login.css') }}?v=2">
-
-    <script src="{{ request.static_url('vsys:static/js/signup.js') }}"></script>
 {% endblock %}
 
 {%block content %}
 <div class="login">
     <div class="login">
-        <p class="login-title"> Login now!</p>
-        
-        <h2 id="confirmation"></h2>
+        <p class="login-title">Login now!</p>
         
         <label for="email">Email:</label>
         <input id="email" name="email" type="text" placeholder="Put yout email address..." required/>
