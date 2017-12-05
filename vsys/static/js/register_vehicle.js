@@ -19,9 +19,7 @@ function validate(fieldname) {
         message.innerHTML = "No special characters are allowed on this field";
     } else if (fieldname == "email" && field.value.indexOf("@") == -1) {
         message.innerHTML = "Please input a valid email";
-    } else if (fieldname == "type" && field.value == "---"){
-        message.innerHTML = "Please select a vehicle";
-    } else { 
+    }  else { 
         message.innerHTML = "✓";
         message.style.color = "green";
         return true;
@@ -34,7 +32,6 @@ function validate(fieldname) {
 $(document).ready(function(){
     
     $("#register").click(function(){
-        checkPassword();
 
         data = {
             'type': $("#type").val(), 
@@ -56,7 +53,7 @@ $(document).ready(function(){
             context: this
         }).done(function(resp){
             if(resp.success){
-                window.location.href = "/login";
+                window.location.href = "/offercar";
             }
         });
     });
