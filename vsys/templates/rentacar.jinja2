@@ -23,78 +23,76 @@
     </div>
     <div class="content">
         <h2 class="category-title">Cars</h2>
-        {% for car in cars %}
-            <div class="catalogue">
+        <div class="catalogue">
+            {% for car in cars %}
                 <a href="{{request.route_url('vehicle_show', vehicle_id=car._id) }}" class="offer">
                 
-                <div>
-                    <div class="offer-circle">
-                        <img class="offer-image" src="{{ request.static_url('vsys:static/images/car.jpg') }}">
+                    <div>
+                        <div class="offer-circle">
+                            <img class="offer-image" src="{{ request.static_url('vsys:static/images/car.jpg') }}">
+                        </div>
+                        <br>
+                        <div class="offer-title"></div>
+                            <br>
+                            <div class="offer-value">${{ car.value }}.00</div>
+                            <br>
                     </div>
-                    <br>
-                    <div class="offer-title"></div>
-                        <br>
-                        <div class="offer-value">${{ car.value }}.00</div>
-                        <br>
-                </div>
-            </a>
-        {% endfor %}
-        {% if cars | length == 0 %}
-                <div class="text-center"><h3>Sem carros cadastradas</h3></div>
-            {% endif %}
+                </a>
+            {% endfor %}
         </div>
+        {% if cars | length == 0 %}
+            <div class="text-center"><h3>Sem carros cadastradas</h3></div>
+        {% endif %}
     
         <h2 class="category-title">Bycicles</h2>
-            {% for bike in bikes %}
             <div class="catalogue">
-                <a href="{{request.route_url('vehicle_show', vehicle_id=bike._id) }}" class="offer">
-                
-                <div>
-                    <div class="offer-circle">
-                        <img class="offer-image" src="{{ request.static_url('vsys:static/images/bike.jpg') }}">
+                {% for bike in bikes %}
+                    <a href="{{request.route_url('vehicle_show', vehicle_id=bike._id) }}" class="offer">
+                    
+                    <div>
+                        <div class="offer-circle">
+                            <img class="offer-image" src="{{ request.static_url('vsys:static/images/bike.jpg') }}">
+                        </div>
+                        <br>
+                        <div class="offer-title"></div>
+                            <br>
+                            <div class="offer-value">${{ bike.value }}.00</div>
+                            <br>
                     </div>
-                    <br>
-                    <div class="offer-title"></div>
-                        <br>
-                        <div class="offer-value">${{ bike.value }}.00</div>
-                        <br>
-                </div>
-            </a>
-            {% endfor %}
+                </a>
+                {% endfor %}
+            </div>
             {% if bikes | length == 0 %}
                 <div class="text-center"><h3>Sem bikes cadastradas</h3></div>
             {% endif %}
         </div>
     
         <h2 class="category-title">Motorcycles</h2>
-            {% for moto in motos %}
             <div class="catalogue">
-                <a href="{{request.route_url('vehicle_show', vehicle_id=moto._id) }}" class="offer">
-                
-                <div>
-                    <div class="offer-circle">
-                        <img class="offer-image" src="{{ request.static_url('vsys:static/images/moto.jpg') }}">
-                    </div>
-                    <br>
-                    <div class="offer-title"></div>
-                        <br>
-                        <div class="offer-value">${{ moto.value }}.00</div>
-                        <br>
-                </div>
-            </a>
-            {% endfor %}
+                {% for moto in motos %}
+                    <a href="{{request.route_url('vehicle_show', vehicle_id=moto._id) }}" class="offer">
+                        <div>
+                            <div class="offer-circle">
+                                <img class="offer-image" src="{{ request.static_url('vsys:static/images/moto.jpg') }}">
+                            </div>
+                            <br>
+                            <div class="offer-title"></div>
+                                <br>
+                                <div class="offer-value">${{ moto.value }}.00</div>
+                                <br>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
             {% if motos | length == 0 %}
                 <div class="text-center"><h3>Sem motos cadastradas</h3></div>
             {% endif %}
         </div>
     </div>
-
-    
     
     <script type="text/javascript">
     $(document).ready(function(){
         $('.catalogue').each(function() {
-            if ($(this).html().substring(0,3) != "<h2")
                 $(this).slick({
                     dots: true,
                     infinite: true,
