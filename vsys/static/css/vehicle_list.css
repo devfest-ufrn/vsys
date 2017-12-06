@@ -1,0 +1,58 @@
+a, a:hover{
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f2f1e8;
+}
+
+.content {
+    margin: auto;
+    padding: 20px;
+    width: 80%;
+    text-align: center;
+}
+
+.catalogue .offer-circle {
+	display: inline-block;
+}
+
+.offer{
+    padding: 2em 0 2em 0;
+    margin: 0 0.5em;
+    flex: 1;
+    text-decoration: none;
+    color: rgba(0,0,0,0.54);
+}
+
+.offer-circle{
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+.offer-image {
+    position: absolute; 
+    height: 100%;
+    width: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.offer-title{
+    padding-top: 1em;
+    font-size: 30px;
+}
+
+.category-title{
+    padding-left: 2em;
+    color: rgba(0,0,0,0.54);
+}
+
+.offer-container:hover {
+    background-color: #CCC;
+}

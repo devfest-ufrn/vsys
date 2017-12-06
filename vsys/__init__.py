@@ -40,14 +40,21 @@ def main(global_config, **settings):
     # Routes (maybe put in routes.py later)
     config.add_route('index', '/')
     config.add_route('signup', '/signup')
+    config.add_route('login', '/login')
 
     config.add_route('rentacar', '/rentacar')
+    
     config.add_route('offercar', '/offercar')
+    config.add_route('register_vehicle', '/offercar/register_vehicle')
 
     ### Users routes:
     config.add_route('users', '/users')
     config.add_route('user', '/users/{user_id}')
 
+    ### Vehicles routes:
+    config.add_route('vehicles', '/vehicles')
+    config.add_route('vehicle', '/vehicles/{vehicle_id}')
+    config.add_route('vehicle_by_type', '/vehicles/type/{vehicle_type}')
 
     # config.scan('routes.py')
     config.scan()

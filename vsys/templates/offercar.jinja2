@@ -1,5 +1,53 @@
 {% extends "vsys:templates/_base.jinja2" %}
 
-{%block content %}
-	<h1>Offer Car</h1>
+{% block head %}
+
+		<!-- <link rel="stylesheet" type="text/css" href="../static/css/home.css"> -->
+		<link rel="stylesheet" type="text/css" href="../static/css/offercar.css">
+
+{% endblock %}
+
+{% block content %}
+		<div class="sub-navbar">
+			<ul class="sub-menulinks">
+				<li><a href="#vehicles">Vehicles</a></li>
+				<li><a href="#talks">Talks</a></li>
+			</ul>
+		</div>
+
+		<a href="{{ request.route_url('register_vehicle') }}">
+		<div class="new-offer">
+			<div>
+				<h3 class="button-title">Start now by offering your car for other users</h3>
+			</div>
+			<div>
+				<p class="button-desc">Define the period in which your car will be available for rent, stipulate a value per hour used, negotiate directly with your customer. All with guaranteed safety and simplicity.</p>
+			</div>
+		</div>
+		</a>
+
+		<div id="vehicles">
+			<h3 class="session-title">Your registred vehicles</h3>
+
+			{% for vehicle in vehicles %}
+				<a class="offer" href="#">
+					<div class="offer-circle">
+						<img class="offer-image" src="../static/images/car.jpg">
+					</div>
+					<div class="offer-info">
+						<h4>Vehicle #{{loop.index}}</h4>
+					    <p class="car_model">Modelo: {{ vehicle.model }} </p>
+					    <p class="car_price">Preço: ${{ vehicle.value }} </p>
+						{# <p class="date"><i class="fa fa-calendar" aria-hidden="true"></i> 20/04/2017 <i class="fa fa-clock-o" aria-hidden="true"></i> 15:00</p> #}
+						<p class="by">Alugado por Fulaninho</p>
+						{# <p class="detail">Click to view in detail</p> #}
+					</div>
+				</a>
+			{% endfor %}
+
+			{# <div id="talks">
+				<h3 class="session-title">Your talks</h3>
+			</div> #}
+		</div>
+
 {% endblock %}

@@ -1,0 +1,140 @@
+{% extends "vsys:templates/_base.jinja2" %}
+
+{% block head %}
+		<!--fazer css dessa pagina-->
+		<link rel="stylesheet" type="text/css" href="{{ request.static_url('vsys:static/css/register_vehicle.css') }}">
+		<link rel="stylesheet" type="text/css" href="../static/css/reset2.css">
+
+    	<link rel="stylesheet" type="text/css" href="{{ request.static_url('vsys:static/css/signup.css') }}?v=2">
+
+    	<script src="{{ request.static_url('vsys:static/js/register_vehicle.js') }}"></script>
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto">
+
+{% endblock %}
+		
+{% block content %}
+	<div class="container-fluid">
+			<p class="register-title"> Register Vehicle</p>
+			<div class="row">
+				<div class="col-md-offset-4 col-md-4">
+					<h2 id="confirmation"></h2>
+				</div>
+			</div>
+			
+			<div class="form-group row">
+			  <label for="type" class="col-sm-offset-5 col-sm-1 col-form-label">Vehicle Type:</label>
+			  <div class="col-sm-2">
+				  <select class="form-control" id="type">
+				    <option>Car</option>
+					<option>Motorcycle</option>
+					<option>Bike</option>
+				  </select>
+			  </div>
+			</div>
+			
+			<div class="form-group row">
+				<label for="brand" class="col-sm-offset-5 col-sm-1 col-form-label">Brand:</label>
+				<div class="col-sm-2">
+					<input type="text" name="brand" id="brand" class="form-control" onblur="validate('brand')" onkeyup="validate('brand')"/>
+				</div>
+				<div class="col-sm-3">
+					<span id="modelMes"></span>
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label for="model" class="col-sm-offset-5 col-sm-1 col-form-label">Model:</label>
+				<div class="col-sm-2">
+					<input type="text" name="model" id="model" class="form-control" onblur="validate('model')" onkeyup="validate('model')"/>
+				</div>
+				<div class="col-sm-3">
+					<span id="modelMes"></span>
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label for="year" class="col-sm-offset-5 col-sm-1 col-form-label">Year:</label>
+				<div class="col-sm-2">
+					<input type="number" name="year" id="year" class="form-control" onblur="validate('year')" onkeyup="validate('year')"/>
+				</div>
+				<div class="col-sm-3">
+					<span id="modelMes"></span>
+				</div>
+			</div>
+
+			<div class="form-group row">
+	    	  <label for="category" class="col-sm-offset-5 col-sm-1 col-form-label">Category:</label>
+	    	  <div class="col-sm-2">
+				  <select class="form-control" id="category">
+				    <option>Hatch</option>
+					<option>Sedan</option>
+					<option>SUV</option>
+				  </select>
+			  </div>
+			</div>
+			
+			<div class="form-group row">
+				<label for="color" class="col-sm-offset-5 col-sm-1 col-form-label">Color:</label>
+				<div class="col-sm-2">
+					<input type="text" name="color" id="color" onblur="validate('color')" onkeyup="validate('color')" class="form-control"/>
+				</div>
+				<div class="col-sm-3">
+					<span id="colorMes"></span>
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label for="license_plate" class="col-sm-offset-5 col-sm-1 col-form-label">License Plate:</label>
+				<div class="col-sm-2">
+					<input type="text" name="license_plate" id="license_plate" onblur="validate('license_plate')" onkeyup="validate('license_plate')" class="form-control"/>
+				</div>
+				<div class="col-sm-3">
+					<span id="colorMes"></span>
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label for="seats" class="col-sm-offset-5 col-sm-1 col-form-label">Number of Seats:</label>
+				<div class="col-sm-2">
+					<input type="number" name="seats" id="seats" onblur="validate('seats')" onkeyup="validate('seats')" class="form-control"/>
+				</div>
+				<div class="col-sm-3">
+					<span id="colorMes"></span>
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label for="num_doors" class="col-sm-offset-5 col-sm-1 col-form-label">Number of Doors:</label>
+				<div class="col-sm-2">
+					<input type="number" name="num_doors" id="num_doors" onblur="validate('num_doors')" onkeyup="validate('num_doors')" class="form-control"/>
+				</div>
+				<div class="col-sm-3">
+					<span id="colorMes"></span>
+				</div>
+			</div>
+			
+			<div class="form-group row">
+			  <label for="fuel" class="col-sm-offset-5 col-sm-1 col-form-label">Fuel type:</label>
+			  <div class="col-sm-2">
+				  <select class="form-control" id="fuel">
+				    <option>Gasoline</option>
+					<option>Alcohol</option>
+					<option>Diesel</option>
+				  </select>
+			  </div>
+			</div>
+			
+			<div class="form-group row">
+				<label for="value" class="col-sm-offset-5 col-sm-1 col-form-label">Value: $</label>
+				<div class="col-sm-1">
+						<input type="number" onblur="validate('value')" onkeyup="validate('value')" step="any" name="value" id="value" step="any" class="form-control input-sm" min="0"/>
+				</div>
+					<label for="time" class="col-sm-1 col-form-label">per hour</label>
+			</div>
+			
+			
+			<input class="col-lg-offset-5 col-lg-10 register_button" type="button" name="submit" value="Submit Vehicle" id="register"/>     	 	
+	</div>
+
+
+{% endblock %}

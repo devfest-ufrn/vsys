@@ -16,10 +16,16 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 		<link rel="stylesheet" type="text/css" href="../static/css/home.css">
+		<link rel="stylesheet" type="text/css" href="../static/css/offercar.css">
+		<link rel="stylesheet" type="text/css" href="../static/css/vehicle.css">
+		<link rel="stylesheet" type="text/css" href="../static/css/vehicle_list.css">
+		<link rel="stylesheet" type="text/css" href="../static/css/login_page.css">
 		<!--<link rel="stylesheet" type="text/css" href="../static/css/navbar.css">-->
 		<!--<link rel="stylesheet" type="text/css" href="../static/css/footer.css">-->
 		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oswald|Roboto+Slab">
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+		<link rel="stylesheet" type="text/css" href="../static/css/reset2.css">
 		
 		<link rel="stylesheet" type="text/css" href="{{ request.static_url('vsys:static/css/navbar.css') }}">
 		<link rel="stylesheet" type="text/css" href="{{ request.static_url('vsys:static/css/footer.css') }}">
@@ -42,7 +48,7 @@
 			</div>
 			<div class="loginbuttons">
 				<a href="{{ request.route_url('signup') }}"><button>Get Started</button></a>
-				<a href="#"><button>Login</button></a>
+				<a href="{{ request.route_url('login') }}"><button>Login</button></a>
 			</div>
 		</nav>
 
@@ -50,7 +56,8 @@
 
 		<footer>
 			<div class="footer">
-				<p>2017 - Gustavo A Carvalho; Thiago C Lucena; Yuri A Martins - Instituto Metrópole Digital - Universidade Federal do Rio Grande do Norte</p>
+				<p>2017 - Gustavo A Carvalho; João Victor B Barboza; Pedro Arthur M Fernandes; Thiago C Lucena; Yuri A Martins; Yuri R da Silva 
+				<p>Instituto Metrópole Digital - Universidade Federal do Rio Grande do Norte</p>
 			</div>
 		</footer>
 		
