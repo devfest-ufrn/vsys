@@ -30,7 +30,7 @@
 			<h3 class="session-title">Your registred vehicles</h3>
 
 			{% for vehicle in vehicles %}
-				<a class="offer" href="#">
+				<a class="offer" href="{{request.route_url('vehicle_show', vehicle_id=vehicle._id) }}">
 					<div class="offer-circle">
 						<img class="offer-image" src="../static/images/car.jpg">
 					</div>

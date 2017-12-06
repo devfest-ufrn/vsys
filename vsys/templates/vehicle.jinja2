@@ -1,0 +1,152 @@
+{% extends "vsys:templates/_base.jinja2" %}
+
+{% block head %}
+	{# <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script> #}
+	{# <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" /> #}
+	{# <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" /> #}
+
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	
+	<link rel="stylesheet" type="text/css" href="{{ request.static_url('vsys:static/css/vehicle.css') }}">
+
+{% endblock %}
+
+{%block content %}
+	<div class="content" style="padding: 2em;">
+    	<div class="alert alert-danger" id="nd" style="display: none;">
+		  <strong>Error!</strong> This operation isn't suported yet.
+		</div>
+    	
+    	<div class="container">
+    		<h1>{{brand}} {{model}}</h1> 
+    		<h3><i class="fa fa-money" aria-hidden="true"></i> <strong>$ {{value}}.00</strong> <i class="fa fa-clock-o" aria-hidden="true"></i> por hora de uso</h3>
+    		
+    		<hr>
+    	    
+    	    <div class="row">
+    	    	<div class="col-md-2 profile_pic">
+    	    		<img src="http://www.tulatours.com/AdminPanel/img/no_user.png"></img>
+    	    	</div>
+    	    	<div class="col-md-4">
+    	    		<h4><i class="fa fa-user-o" aria-hidden="true"></i> Yuri Alessandro Martins</h4>
+    	    		<h4>Média das ofertas: <i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i></h4>
+    	    	</div>
+    	    </div>
+    	    
+    	    <hr>
+    	    
+    	    <div class="row">
+    	        <div class="col-md-6 text-center">
+    	            <div class="slider">
+    	                <div>
+    	                    <img class="offer-image" src="{{ request.static_url('vsys:static/images/car_example01/001.jpg') }}">
+    	                </div>
+    	                <div>
+    	                    <img class="offer-image" src="{{ request.static_url('vsys:static/images/car_example01/002.jpg') }}">
+    	                </div>
+    	                <div>
+    	                    <img class="offer-image" src="{{ request.static_url('vsys:static/images/car_example01/003.jpg') }}">
+    	                </div>
+    	                <div>
+    	                    <img class="offer-image" src="{{ request.static_url('vsys:static/images/car_example01/004.jpg') }}">
+    	                </div>
+    	                <div>
+    	                    <img class="offer-image" src="{{ request.static_url('vsys:static/images/car_example01/005.jpg') }}">
+    	                </div>
+                    </div>
+    	        </div>
+    	        <div class="col-md-6 infos">
+					<dl>
+					  <dt><i class="fa fa-ellipsis-v" aria-hidden="true"></i> Tipo</dt>
+					  	<dd> {{vehicle_type}} </dd>
+					  <dt><i class="fa fa-ellipsis-v" aria-hidden="true"></i> Categoria</dt>
+					  	<dd> {{category}}</dd>
+					  <dt><i class="fa fa-car" aria-hidden="true"></i> Modelo</dt>
+					  	<dd> {{brand}} {{model}}</dd>
+					  <dt><i class="fa fa-ellipsis-v" aria-hidden="true"></i> Combustível</dt>
+					  	<dd> {{fuel_type}} </dd>
+					  {# <dt><i class="fa fa-map-marker" aria-hidden="true"></i> Local</dt> #}
+					  	{# <dd> Natal</dd> #}
+		  			  <dt><i class="fa fa-thumb-tack" aria-hidden="true"></i> Cor</dt>
+					  	<dd> {{color}}</dd>
+					  <h4>
+					  <dt><i class="fa fa-money" aria-hidden="true"></i> Valor</dt>
+					  	<dd> <strong>$ {{value}}.00</strong> por hora de uso</dd>
+					  </h4>
+					  
+					  	<div class="stars">
+							<form action="">
+								<input class="star star-5" id="star-5" type="radio" name="star"/>
+								<label class="star star-5" for="star-5"></label>
+								<input class="star star-4" id="star-4" type="radio" name="star"/>
+								<label class="star star-4" for="star-4"></label>
+								<input class="star star-3" id="star-3" type="radio" name="star"/>
+								<label class="star star-3" for="star-3"></label>
+								<input class="star star-2" id="star-2" type="radio" name="star"/>
+								<label class="star star-2" for="star-2"></label>
+								<input class="star star-1" id="star-1" type="radio" name="star"/>
+								<label class="star star-1" for="star-1"></label>
+							</form>
+						</div>
+						<br>
+						<button type="button" class="btn btn-lg btn-primary pull-right rent_a_car">Alugar</button>
+				  		<!--<button type="button" class="btn btn-sm btn-danger pull-right">Denunciar</button>-->
+					</dl>
+    	        </div>
+    	    </div>
+	    	
+    	    <hr>
+    	    
+    	    <h3><i class="fa fa-commenting-o" aria-hidden="true"></i> O que os nossos usuários dizem sobre esse veículo?</h3>
+    	    
+    	    <div class="fb-comments" data-href="wces.com" data-numposts="5" data-width="100%"></div>
+    	    
+    	    <div id="fb-root"></div>
+			<script>(function(d, s, id) {
+			  var js, fjs = d.getElementsByTagName(s)[0];
+			  if (d.getElementById(id)) return;
+			  js = d.createElement(s); js.id = id;
+			  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.9";
+			  fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));</script>
+    	    
+    	</div>
+    </div>
+	
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('.slider').slick({
+			dots: true,
+			infinite: true,
+			speed: 2000,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 2500,
+			adaptiveHeight: true,
+			centerMode: true,
+			responsive: [
+		    {
+		      breakpoint: 1024,
+		      settings: {
+		        slidesToShow: 1,
+		        slidesToScroll: 1,
+		        infinite: true,
+		        dots: true
+		      }
+		    },
+		    ]
+		});
+		
+		$('.rent_a_car').on('click', function(){
+			$('#nd').show();	
+		});
+	});
+	</script>
+
+{% endblock %}

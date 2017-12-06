@@ -1,133 +1,133 @@
 {% extends "vsys:templates/_base.jinja2" %}
 
 {% block head %}
-	<link rel="stylesheet" href="{{ request.static_url('vsys:static/css/rentarcar.css') }}">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+    <link rel="stylesheet" href="{{ request.static_url('vsys:static/css/rentarcar.css') }}">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
 {% endblock %}
 
 {% block content %}
 <div class="searchfield">
-		<form action="">
-			<input type="text" name="searchcar" placeholder="Search your favorite car model..."/>
-			<br>
-			<input type="submit" value="Search">
-		</form>
-	</div>
-	
-	<div class="title">
-		<h2> Find your ideal vehicle </h2>
-		<p> Check out the best options for you </p>
-	</div>
-	<h2 class="">There's no vehicle of this type in our database</h2>
-	<div class="content">
-		<a href="#"><h2 class="category-title">Cars</h2></a>
-		{% for car in cars %}
-			<div class="catalogue">
-	            <a href="{{request.route_url('index') }}" class="offer">
-				
-				<div>
-					<div class="offer-circle">
-			 			<img class="offer-image" src="../static/images/car.jpg">
-			 		</div>
-			 		<br>
-					<div class="offer-title"></div>
-			 			<br>
-			 			<div class="offer-value">${{ car.value }}.00</div>
-			 			<br>
-			 	</div>
-			</a>
-	 	{% endfor %}
-	 	{% if cars | length == 0 %}
-	 			<div class="text-center"><h3>Sem carros cadastradas</h3></div>
-	 		{% endif %}
+        <form action="">
+            <input type="text" name="searchcar" placeholder="Search your favorite car model..."/>
+            <br>
+            <input type="submit" value="Search">
+        </form>
+    </div>
+    
+    <div class="title">
+        <h2> Find your ideal vehicle </h2>
+        <p> Check out the best options for you </p>
+    </div>
+    <div class="content">
+        <h2 class="category-title">Cars</h2>
+        {% for car in cars %}
+            <div class="catalogue">
+                <a href="{{request.route_url('vehicle_show', vehicle_id=car._id) }}" class="offer">
+                
+                <div>
+                    <div class="offer-circle">
+                        <img class="offer-image" src="{{ request.static_url('vsys:static/images/car.jpg') }}">
+                    </div>
+                    <br>
+                    <div class="offer-title"></div>
+                        <br>
+                        <div class="offer-value">${{ car.value }}.00</div>
+                        <br>
+                </div>
+            </a>
+        {% endfor %}
+        {% if cars | length == 0 %}
+                <div class="text-center"><h3>Sem carros cadastradas</h3></div>
+            {% endif %}
         </div>
-	
-		<a href="vehicle_list.php"><h2 class="category-title">Bycicles</h2></a>
-			{% for bike in bikes %}
-			<div class="catalogue">
-	            <a href="{{request.route_url('index') }}" class="offer">
-				
-				<div>
-					<div class="offer-circle">
-			 			<img class="offer-image" src="../static/images/bike.jpg">
-			 		</div>
-			 		<br>
-					<div class="offer-title"></div>
-			 			<br>
-			 			<div class="offer-value">${{ bike.value }}.00</div>
-			 			<br>
-			 	</div>
-			</a>
-	 		{% endfor %}
-	 		{% if bikes | length == 0 %}
-	 			<div class="text-center"><h3>Sem bikes cadastradas</h3></div>
-	 		{% endif %}
+    
+        <h2 class="category-title">Bycicles</h2>
+            {% for bike in bikes %}
+            <div class="catalogue">
+                <a href="{{request.route_url('vehicle_show', vehicle_id=bike._id) }}" class="offer">
+                
+                <div>
+                    <div class="offer-circle">
+                        <img class="offer-image" src="{{ request.static_url('vsys:static/images/bike.jpg') }}">
+                    </div>
+                    <br>
+                    <div class="offer-title"></div>
+                        <br>
+                        <div class="offer-value">${{ bike.value }}.00</div>
+                        <br>
+                </div>
+            </a>
+            {% endfor %}
+            {% if bikes | length == 0 %}
+                <div class="text-center"><h3>Sem bikes cadastradas</h3></div>
+            {% endif %}
         </div>
-	
-		<a href="vehicle_list.php"><h2 class="category-title">Motorcycles</h2></a>
-			{% for moto in motos %}
-			<div class="catalogue">
-	            <a href="{{request.route_url('index') }}" class="offer">
-				
-				<div>
-					<div class="offer-circle">
-			 			<img class="offer-image" src="../static/images/moto.jpg">
-			 		</div>
-			 		<br>
-					<div class="offer-title"></div>
-			 			<br>
-			 			<div class="offer-value">${{ moto.value }}.00</div>
-			 			<br>
-			 	</div>
-			</a>
-	 		{% endfor %}
-	 		{% if motos | length == 0 %}
-	 			<div class="text-center"><h3>Sem motos cadastradas</h3></div>
-	 		{% endif %}
+    
+        <h2 class="category-title">Motorcycles</h2>
+            {% for moto in motos %}
+            <div class="catalogue">
+                <a href="{{request.route_url('vehicle_show', vehicle_id=moto._id) }}" class="offer">
+                
+                <div>
+                    <div class="offer-circle">
+                        <img class="offer-image" src="{{ request.static_url('vsys:static/images/moto.jpg') }}">
+                    </div>
+                    <br>
+                    <div class="offer-title"></div>
+                        <br>
+                        <div class="offer-value">${{ moto.value }}.00</div>
+                        <br>
+                </div>
+            </a>
+            {% endfor %}
+            {% if motos | length == 0 %}
+                <div class="text-center"><h3>Sem motos cadastradas</h3></div>
+            {% endif %}
         </div>
-	</div>
+    </div>
 
-	
-	
-	<script type="text/javascript">
-	$(document).ready(function(){
-		$('.catalogue').each(function() {
-			if ($(this).html().substring(0,3) != "<h2")
-				$(this).slick({
-					dots: true,
-					infinite: true,
-					speed: 1000,
-					slidesToShow: 4,
-					slidesToScroll: 4,
-					responsive: [
-						{
-							breakpoint: 1025,
-							settings: {
-								slidesToShow: 3,
-								slidesToScroll: 3,
-								infinite: true,
-								dots: true
-							}
-						},
-						{
-							breakpoint: 601,
-							settings: {
-								slidesToShow: 2,
-								slidesToScroll: 2
-							}
-						},
-						{
-							breakpoint: 481,
-							settings: {
-								slidesToShow: 1,
-								slidesToScroll: 1
-							}
-						}
-					]
-				});
-		})
-	});
-	</script>
+    
+    
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('.catalogue').each(function() {
+            if ($(this).html().substring(0,3) != "<h2")
+                $(this).slick({
+                    dots: true,
+                    infinite: true,
+                    speed: 1000,
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                    responsive: [
+                        {
+                            breakpoint: 1025,
+                            settings: {
+                                slidesToShow: 3,
+                                slidesToScroll: 3,
+                                infinite: true,
+                                dots: true
+                            }
+                        },
+                        {
+                            breakpoint: 601,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 2
+                            }
+                        },
+                        {
+                            breakpoint: 481,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
+                        }
+                    ]
+                });
+        })
+    });
+    </script>
 {%endblock%}
