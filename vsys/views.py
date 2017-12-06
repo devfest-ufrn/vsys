@@ -40,3 +40,21 @@ def register_vehicle(request):
 @view_config(route_name='login', renderer='templates/login.jinja2')
 def login(request):
     return {'success': True}
+
+@view_config(route_name='vehicle_show', renderer='templates/vehicle.jinja2')
+def vehicle(request):
+    vehicle_id = request.matchdict['vehicle_id']
+    vehicle = vehicle_controller.get_vehicle(vehicle_id)
+    return {
+                'vehicle_type' : vehicle.vehicle_type,
+                'brand': vehicle.brand,
+                'model': vehicle.model,
+                'year': vehicle.year,
+                'category': vehicle.category,
+                'color': vehicle.color,
+                'license_plate': vehicle.license_plate,
+                'seats': vehicle.seats,
+                'num_doors': vehicle.num_doors,
+                'fuel_type' : vehicle.fuel_type,
+                'value' : vehicle.value
+            }

@@ -19,7 +19,7 @@ function validate(fieldname) {
         message.innerHTML = "No special characters are allowed on this field";
     } else if (fieldname == "email" && field.value.indexOf("@") == -1) {
         message.innerHTML = "Please input a valid email";
-    }  else { 
+    } else { 
         message.innerHTML = "✓";
         message.style.color = "green";
         return true;

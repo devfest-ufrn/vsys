@@ -54,6 +54,7 @@ def main(global_config, **settings):
     ### Vehicles routes:
     config.add_route('vehicles', '/vehicles')
     config.add_route('vehicle', '/vehicles/{vehicle_id}')
+    config.add_route('vehicle_show', '/vehicle/{vehicle_id}')
     config.add_route('vehicle_by_type', '/vehicles/type/{vehicle_type}')
 
     # config.scan('routes.py')
