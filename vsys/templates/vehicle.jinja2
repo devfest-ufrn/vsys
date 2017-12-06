@@ -1,18 +1,14 @@
 {% extends "vsys:templates/_base.jinja2" %}
 
 {% block head %}
-	{# <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script> #}
-	{# <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" /> #}
-	{# <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" /> #}
+	<link rel="stylesheet" type="text/css" href="{{ request.static_url('vsys:static/css/vehicle.css') }}">
 
-	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>
-	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>
-	<script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
 	
-	<link rel="stylesheet" type="text/css" href="{{ request.static_url('vsys:static/css/vehicle.css') }}">
 
 {% endblock %}
 
@@ -42,21 +38,21 @@
     	    
     	    <div class="row">
     	        <div class="col-md-6 text-center">
-    	            <div class="slider">
+    	            <div class = "slider">
     	                <div>
-    	                    <img class="offer-image" src="{{ request.static_url('vsys:static/images/car_example01/001.jpg') }}">
+    	                    <img src="{{ request.static_url('vsys:static/images/car_example01/001.jpg') }}">
     	                </div>
     	                <div>
-    	                    <img class="offer-image" src="{{ request.static_url('vsys:static/images/car_example01/002.jpg') }}">
+    	                    <img src="{{ request.static_url('vsys:static/images/car_example01/002.jpg') }}">
     	                </div>
     	                <div>
-    	                    <img class="offer-image" src="{{ request.static_url('vsys:static/images/car_example01/003.jpg') }}">
+    	                    <img src="{{ request.static_url('vsys:static/images/car_example01/003.jpg') }}">
     	                </div>
     	                <div>
-    	                    <img class="offer-image" src="{{ request.static_url('vsys:static/images/car_example01/004.jpg') }}">
+    	                    <img src="{{ request.static_url('vsys:static/images/car_example01/004.jpg') }}">
     	                </div>
     	                <div>
-    	                    <img class="offer-image" src="{{ request.static_url('vsys:static/images/car_example01/005.jpg') }}">
+    	                    <img src="{{ request.static_url('vsys:static/images/car_example01/005.jpg') }}">
     	                </div>
                     </div>
     	        </div>
@@ -70,8 +66,8 @@
 					  	<dd> {{brand}} {{model}}</dd>
 					  <dt><i class="fa fa-ellipsis-v" aria-hidden="true"></i> Combustível</dt>
 					  	<dd> {{fuel_type}} </dd>
-					  {# <dt><i class="fa fa-map-marker" aria-hidden="true"></i> Local</dt> #}
-					  	{# <dd> Natal</dd> #}
+					  <dt><i class="fa fa-map-marker" aria-hidden="true"></i> Local</dt>
+					  	<dd> Natal</dd>
 		  			  <dt><i class="fa fa-thumb-tack" aria-hidden="true"></i> Cor</dt>
 					  	<dd> {{color}}</dd>
 					  <h4>
@@ -117,34 +113,22 @@
     	    
     	</div>
     </div>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
 	
 	<script type="text/javascript">
 	$(document).ready(function(){
 		$('.slider').slick({
 			dots: true,
 			infinite: true,
-			speed: 2000,
+			speed: 300,
 			slidesToShow: 1,
-			slidesToScroll: 1,
-			autoplay: true,
-			autoplaySpeed: 2500,
 			adaptiveHeight: true,
-			centerMode: true,
-			responsive: [
-		    {
-		      breakpoint: 1024,
-		      settings: {
-		        slidesToShow: 1,
-		        slidesToScroll: 1,
-		        infinite: true,
-		        dots: true
-		      }
-		    },
-		    ]
-		});
-		
-		$('.rent_a_car').on('click', function(){
-			$('#nd').show();	
+			autoplay: true,
+			autoplaySpeed: 2500
 		});
 	});
 	</script>
