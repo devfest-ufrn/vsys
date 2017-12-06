@@ -1,10 +1,17 @@
 {% extends "vsys:templates/_base.jinja2" %}
 
+{% block head %}
+	<link rel="stylesheet" href="{{ request.static_url('vsys:static/css/rentarcar.css') }}">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+{% endblock %}
 
-{% block content %} 
+{% block content %}
 <div class="searchfield">
-		<form action="#">
+		<form action="">
 			<input type="text" name="searchcar" placeholder="Search your favorite car model..."/>
+			<br>
 			<input type="submit" value="Search">
 		</form>
 	</div>
@@ -15,32 +22,70 @@
 	</div>
 	<h2 class="">There's no vehicle of this type in our database</h2>
 	<div class="content">
-		<a href="vehicle_list.php"><h2 class="category-title">Cars</h2></a>
-		<div class="catalogue">
-            <a href=\"vehicle.php\" class=\"offer\">
-			<div>
-				<div class=\"offer-circle\">
-		 			<img class=\"offer-image\" src=\"../static/images/" . $type . ".jpg\">
-		 		</div>
-		 		<br>
-				<div class=\"offer-title\">" . $vec->modelo . "</div>
-		 			<br>
-		 			<div class=\"offer-value\">\$" . $vec->preco . ",00</div> - <STRONG>" . $vec->duracao . "hrs</STRONG> of usage
-		 			<br>
-		 			<div class=\"offer-info\">" . $vec->dono . "</div> in " . $vec->local . "
-		 			<br>
-		 	</div>
-		</a>
+		<a href="#"><h2 class="category-title">Cars</h2></a>
+		{% for car in cars %}
+			<div class="catalogue">
+	            <a href="{{request.route_url('index') }}" class="offer">
+				
+				<div>
+					<div class="offer-circle">
+			 			<img class="offer-image" src="../static/images/car.jpg">
+			 		</div>
+			 		<br>
+					<div class="offer-title"></div>
+			 			<br>
+			 			<div class="offer-value">${{ car.value }}.00</div>
+			 			<br>
+			 	</div>
+			</a>
+	 	{% endfor %}
+	 	{% if cars | length == 0 %}
+	 			<div class="text-center"><h3>Sem carros cadastradas</h3></div>
+	 		{% endif %}
         </div>
 	
 		<a href="vehicle_list.php"><h2 class="category-title">Bycicles</h2></a>
-		<div class="catalogue">
-            <?php getVehiclesInfo("bike")?>
+			{% for bike in bikes %}
+			<div class="catalogue">
+	            <a href="{{request.route_url('index') }}" class="offer">
+				
+				<div>
+					<div class="offer-circle">
+			 			<img class="offer-image" src="../static/images/bike.jpg">
+			 		</div>
+			 		<br>
+					<div class="offer-title"></div>
+			 			<br>
+			 			<div class="offer-value">${{ bike.value }}.00</div>
+			 			<br>
+			 	</div>
+			</a>
+	 		{% endfor %}
+	 		{% if bikes | length == 0 %}
+	 			<div class="text-center"><h3>Sem bikes cadastradas</h3></div>
+	 		{% endif %}
         </div>
 	
 		<a href="vehicle_list.php"><h2 class="category-title">Motorcycles</h2></a>
-		<div class="catalogue">
-            <?php getVehiclesInfo("moto")?>
+			{% for moto in motos %}
+			<div class="catalogue">
+	            <a href="{{request.route_url('index') }}" class="offer">
+				
+				<div>
+					<div class="offer-circle">
+			 			<img class="offer-image" src="../static/images/moto.jpg">
+			 		</div>
+			 		<br>
+					<div class="offer-title"></div>
+			 			<br>
+			 			<div class="offer-value">${{ moto.value }}.00</div>
+			 			<br>
+			 	</div>
+			</a>
+	 		{% endfor %}
+	 		{% if motos | length == 0 %}
+	 			<div class="text-center"><h3>Sem motos cadastradas</h3></div>
+	 		{% endif %}
         </div>
 	</div>
 

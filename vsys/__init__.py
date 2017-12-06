@@ -52,6 +52,7 @@ def main(global_config, **settings):
     config.add_route('user', '/users/{user_id}')
     config.add_route('user_email', '/user_email')
 
+    ### Vehicles routes:
     config.add_route('vehicles', '/vehicles')
     config.add_route('vehicle', '/vehicles/{vehicle_id}')
     config.add_route('vehicle_by_type', '/vehicles/type/{vehicle_type}')

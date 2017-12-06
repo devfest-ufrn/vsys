@@ -67,7 +67,7 @@ def get_vehicle(request):
 			}
 
 
-@view_config(route_name="vehicle", request_method="PUT", renderer='jason')
+@view_config(route_name="vehicle", request_method="PUT", renderer='json')
 def edit_vehicle(request):
 	vehicle_id = request.matchdict['vehicle_id']
 	vehicle = vehicle_controller.get_vehicle(vehicle_id)
