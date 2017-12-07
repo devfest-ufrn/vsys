@@ -28,6 +28,19 @@ def register(request):
 def list(request):
     return user_controller.get_users()
 
+@view_config(route_name="user_email", request_method="GET", renderer='json')
+def get_user_by_email(request):
+    params = request.params
+    if params:
+        email = params.get('email')
+    else: 
+        return None 
+    user = user_controller.get_user_by_email(user_email)
+    return {
+        "first_name": user.first_name, 
+        "last_name": user.last_name, 
+    }
+
 @view_config(route_name="user", request_method="GET", renderer='json')
 def get_user(request):
     user_id = request.matchdict['user_id']
